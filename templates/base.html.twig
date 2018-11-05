@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+        {% if not is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+            <div>
+                <a  href="{{ path('app_register') }}">Register</a> / <a  href="{{ path('app_login') }}">Login</a>
+            </div>
+        {% endif %}
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
