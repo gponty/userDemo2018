@@ -27,6 +27,7 @@ class UserFixtures extends Fixture
             $user = new User();
             $user->setNomComplet($faker->name);
             $user->setEmail(sprintf('userdemo%d@example.com', $i));
+            $user->setRoles(['ROLE_ALLOWED_TO_SWITCH']);
             $user->setPassword($this->passwordEncoder->encodePassword(
                 $user,
                 'userdemo'
